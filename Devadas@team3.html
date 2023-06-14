@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tax Filing Application</title>
+  <style>
+    /* Add some basic styles for the admin page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tax Filing Application</h1>
+  
+  <form>
+    <h2>Admin Login</h2>
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="submit" value="Login">
+  </form>
+  
+  <br>
+  
+  <form>
+    <h2>User Registration</h2>
+    <input type="text" name="fullname" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+    <input type="submit" value="Register">
+  </form>
+</body>
+</html>
+<style>.container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px</style><script>document.addEventListener("DOMContentLoaded", function() {
+  var loginLink = document.getElementById("loginLink");
+  var registerLink = document.getElementById("registerLink");
+  var content = document.getElementById("content");
+
+  loginLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    showLoginForm();
+  });
+
+  registerLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    showRegisterForm();
+  });
+
+  function showLoginForm() {
+    var loginForm = `
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br>
+        <input type="submit" value="Login">
+      </form>
+    `;
+    content.innerHTML = loginForm;
+
+    // Add event listener for login form submission
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      // Handle login form submission here
+    });
+  }
+
+  function showRegisterForm() {
+    var registerForm = `
+      <h2>Register</h2>
+      <form id="registerForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" required><br>
+        <input type="submit" value="Register">
+      </form>
+    `;
+    content.innerHTML = registerForm;
+
+    // Add event listener for register form submission
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      // Handle register form submission here
+    });
+  }
+});
+</script>
